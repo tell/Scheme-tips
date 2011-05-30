@@ -10,6 +10,7 @@
 	  (if (logbit? i e)
 	      (iter (modmul result x) (modmul x x) (+ i 1))
 	      (iter result (modmul x x) (+ i 1)))))))
+
 (modpow-LSB 1234 5678 91011)
 
 (define (modpow-MSB x e m)
@@ -28,4 +29,5 @@
 		 (modmul sq x)
 		 sq)
 	     (- i 1)))))))
+
 (modpow-MSB 1234 5678 91011)
