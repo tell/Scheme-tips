@@ -1,3 +1,7 @@
+;;; Implementation for:
+;;; $ gosh -V
+;;; Gauche scheme shell, version 0.9 [utf-8,pthreads], i386-apple-darwin10.4.0
+
 (define (modpow-LSB x e m)
   (define (modmul x y)
     (remainder (* x y) m))
