@@ -26,7 +26,7 @@
   (let ((len (integer-length e)))
     (let iter ((result x)
                (i (- len 2)))
-      (if (< i 0)
+      (if (negative? i)
           result
           (let ((sq (modsq result)))
             (iter
