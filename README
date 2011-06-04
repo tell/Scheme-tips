@@ -1,10 +1,12 @@
-Scheme tips: practice, memo, etc.
+Scheme-tips: tips, practice, memo, etc.
+
+* Author
+  - Tadanori TERUYA <tadanori.teruya@gmail.com>
 
 * Contents
-	- README
-	This file.
-	- LICENSE
-	The license of these software.
-	- AUTHORS
-	A list of authors.
-
+  - README
+  This file.
+  - LICENSE
+  The license of these source codes.
+  - AUTHORS
+  A list of authors.
