@@ -1,3 +1,27 @@
+;; Copyright (c) 2011-2011 Tadanori TERUYA (tell) <tadanori.teruya@gmail.com>
+;;
+;; Permission is hereby granted, free of charge, to any person
+;; obtaining a copy of this software and associated documentation files
+;; (the "Software"), to deal in the Software without restriction,
+;; including without limitation the rights to use, copy, modify, merge,
+;; publish, distribute, sublicense, and/or sell copies of the Software,
+;; and to permit persons to whom the Software is furnished to do so,
+;; subject to the following conditions:
+;;
+;; The above copyright notice and this permission notice shall be
+;; included in all copies or substantial portions of the Software.
+;;
+;; THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+;; EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+;; MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+;; NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
+;; BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
+;; ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+;; CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+;; SOFTWARE.
+;;
+;; @license: The MIT license <http://opensource.org/licenses/MIT>
+
 ;;; Implementation for Gauche.
 
 (use slib)
@@ -106,7 +130,7 @@
     (if (good-enough?)
         next-guess
         (sqrt-iter next-guess (improve next-guess))))
-  (trace sqrt-iter)
+  ;;(trace sqrt-iter)
   (sqrt-iter initial-value (improve initial-value)))
 
 (define (sq x)
@@ -165,13 +189,13 @@
   (if (= a 0)
       b
       (inc (plus-1 (dec a) b))))
-(trace plus-1)
+;;(trace plus-1)
 
 (define (plus-2 a b)
   (if (= a 0)
       b
       (plus-2 (dec a) (inc b))))
-(trace plus-2)
+;;(trace plus-2)
 
 (plus-1 5 6)
 (plus-2 5 6)
@@ -203,7 +227,7 @@
       (+ (trib-r (- x 1))
          (* 2 (trib-r (- x 2)))
          (* 3 (trib-r (- x 3))))))
-(trace trib-r)
+;;(trace trib-r)
 
 (define (trib-i x)
   (define (trib-iter n a b c)
@@ -213,7 +237,7 @@
                    (+ a (* 2 b) (* 3 c))
                    a
                    b)))
-  (trace trib-iter)
+  ;;(trace trib-iter)
   (trib-iter x 2 1 0))
 
 (print "trib-r(0) = " (trib-r 0))
@@ -235,7 +259,7 @@
         ((= n k) 1)
         (else (+ (comb-r (- n 1) k)
                  (comb-r (- n 1) (- k 1))))))
-(trace comb-r)
+;;(trace comb-r)
 
 (define (comb-i n k)
   (define (comb-iter x n k)
@@ -245,7 +269,7 @@
                       (/ n k))
                    (- n 1)
                    (- k 1))))
-  (trace comb-iter)
+  ;;(trace comb-iter)
   (comb-iter 1 n k))
 
 (print (comb-r 0 0))
